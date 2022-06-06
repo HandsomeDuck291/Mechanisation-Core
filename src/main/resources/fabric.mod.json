@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "herebedragons",
+  "version": "${version}",
+
+  "name": "Here Be Dragons",
+  "description": "Go on a great quest to unlock the magic of this world",
+  "authors": [
+    "HandsomeDuck"
+  ],
+  "contact": {
+
+  },
+
+  "license": "CC0-1.0",
+  "icon": "assets/herebedragons/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "handsomeduck.herebedragons.HereBeDragons"
+    ],
+    "client": [
+      "handsomeduck.herebedragons.DragonClient"
+    ]
+  },
+  "mixins": [
+    "herebedragons.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.11.3",
+    "fabric": "*",
+    "minecraft": "1.18.x",
+    "java": ">=17"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
