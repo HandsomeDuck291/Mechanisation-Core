@@ -1,6 +1,8 @@
 package handsomeduck.herebedragons;
 
+import handsomeduck.herebedragons.api.client.renderer.DragonEggRenderer;
 import handsomeduck.herebedragons.client.renderer.FireDragonEggRenderer;
+import handsomeduck.herebedragons.client.renderer.WaterDragonEggRenderer;
 import handsomeduck.herebedragons.common.registry.EntityRegistry;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
@@ -16,7 +18,8 @@ public class DragonClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-        EntityRendererRegistry.register(EntityRegistry.FIREDRAGONEGG, FireDragonEggRenderer::new);
-        //EntityRendererRegistry.register(EntityRegistry.WATERDRAGONEGG, WaterDragonEggRenderer::new);
+        EntityRendererRegistry.register(EntityRegistry.DRAGON_EGG, DragonEggRenderer::new);
+        EntityRendererRegistry.register(EntityRegistry.FIRE_DRAGON_EGG, FireDragonEggRenderer::new);
+        EntityRendererRegistry.register(EntityRegistry.WATER_DRAGON_EGG, WaterDragonEggRenderer::new);
     }
 }

@@ -6,14 +6,14 @@ import handsomeduck.herebedragons.api.entity.DragonEggEntity;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.util.Identifier;
 
-public class FireDragonEggRenderer extends DragonEggRenderer<DragonEggEntity> {
+public class WaterDragonEggRenderer extends DragonEggRenderer<DragonEggEntity> {
 
-    public FireDragonEggRenderer(EntityRendererFactory.Context context) {
+    public WaterDragonEggRenderer(EntityRendererFactory.Context context) {
         super(context);
     }
 
     @Override
     public Identifier getTextureLocation(DragonEggEntity object) {
-        return new Identifier(HereBeDragons.MOD_ID, "textures/entity/dragonegg/fireegg.png");
+        return new Identifier(HereBeDragons.MOD_ID, "textures/entity/dragonegg/wateregg.png");
     }
 }

@@ -1,9 +1,8 @@
 package handsomeduck.herebedragons;
 
-import handsomeduck.herebedragons.common.registry.BlockRegistry;
 import handsomeduck.herebedragons.common.registry.EntityRegistry;
-import handsomeduck.herebedragons.common.registry.ItemRegistry;
-import handsomeduck.herebedragons.common.registry.TileRegistry;
+import handsomeduck.herebedragons.common.registry.ObjectRegistry;
+//import handsomeduck.herebedragons.common.registry.TileRegistry;
 import net.fabricmc.api.ModInitializer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -18,13 +17,11 @@ public class HereBeDragons implements ModInitializer {
 	public void onInitialize() {
 		GeckoLib.initialize();
 
-		BlockRegistry.registerModBlocks();
-		ItemRegistry.registerModItems();
+		ObjectRegistry.registerModItems();
 		EntityRegistry.registerModEntities();
-		new ItemRegistry();
-		new BlockRegistry();
+		new ObjectRegistry();
 		new EntityRegistry();
-		new TileRegistry();
+		//new TileRegistry();
 
 
 
