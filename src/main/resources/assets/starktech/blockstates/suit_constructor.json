@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=north,half=lower": {
+      "y": 0,
+      "model": "starktech:block/suit_constructor"
+    },
+    "facing=south,half=lower": {
+      "y": 180,
+      "model": "starktech:block/suit_constructor"
+    },
+    "facing=east,half=lower": {
+      "y": 90,
+      "model": "starktech:block/suit_constructor"
+    },
+    "facing=west,half=lower": {
+      "y": 270,
+      "model": "starktech:block/suit_constructor"
+    },
+    "facing=up,half=lower": {
+      "y": 0,
+      "model": "starktech:block/suit_constructor"
+    },
+    "facing=down,half=lower": {
+      "y": 0,
+      "model": "starktech:block/suit_constructor"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "itemGroup.starktech.stark_clutter": "Stark Clutter",
+
+  "item.starktech.arc1": "Arc Reactor Tier 1",
+  "item.starktech.palladium": "Palladium",
+
+  "block.starktech.equip_pad": "Equip Pad",
+  "block.starktech.suit_constructor": "Suit Constructor",
+  "block.starktech.palladium_ore": "Palladium Ore",
+
+  "entity.starktech.ENTITY": ""
+}

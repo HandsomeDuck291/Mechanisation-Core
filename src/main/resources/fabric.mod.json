@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "id": "herebedragons",
+  "id": "starktech",
   "version": "${version}",
 
-  "name": "Here Be Dragons",
-  "description": "Go on a great quest to unlock the magic of this world",
+  "name": "Stark Tech",
+  "description": "Release you inner robot, and make a suit while your at it.",
   "authors": [
     "HandsomeDuck"
   ],
@@ -13,25 +13,25 @@
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/herebedragons/icon.png",
+  "icon": "assets/starktech/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "handsomeduck.herebedragons.HereBeDragons"
+      "handsomeduck.starktech.common.StarkTech"
     ],
     "client": [
-      "handsomeduck.herebedragons.DragonClient"
+      "handsomeduck.starktech.common.IronClient"
     ]
   },
   "mixins": [
-    "herebedragons.mixins.json"
+    "starktech.mixins.json"
   ],
 
   "depends": {
-    "fabricloader": ">=0.11.3",
+    "fabricloader": ">=0.14.9",
     "fabric": "*",
-    "minecraft": "1.18.x",
+    "minecraft": "~1.19",
     "java": ">=17"
   },
   "suggests": {
