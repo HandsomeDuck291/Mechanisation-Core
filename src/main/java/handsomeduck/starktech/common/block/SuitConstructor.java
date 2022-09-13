@@ -9,23 +9,23 @@ import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.state.StateManager;
-import net.minecraft.state.property.DirectionProperty;
-import net.minecraft.state.property.EnumProperty;
-import net.minecraft.state.property.Properties;
-import net.minecraft.state.property.Property;
+import net.minecraft.state.property.*;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ItemScatterer;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
+import net.minecraft.util.shape.VoxelShape;
+import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import org.jetbrains.annotations.Nullable;
 
-public class SuitConstructor extends BlockWithEntity {
+public class SuitConstructor extends BlockWithEntity{
     public static final DirectionProperty FACING;
     public static final EnumProperty<DoubleBlockHalf> HALF;
+    protected static final VoxelShape SHAPE;
 
     public SuitConstructor(Settings settings) {
         super(settings);
@@ -45,6 +45,7 @@ public class SuitConstructor extends BlockWithEntity {
         super.onBreak(world, pos, state, player);
     }
 
+    @Override
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
         DoubleBlockHalf doubleBlockHalf = state.get(HALF);
         if (direction.getAxis() == Direction.Axis.Y && doubleBlockHalf == DoubleBlockHalf.LOWER == (direction == Direction.UP)) {
@@ -107,8 +108,14 @@ public class SuitConstructor extends BlockWithEntity {
         builder.add(new Property[]{HALF, FACING});
     }
 
+    @Override
+    public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
+        return SHAPE;
+    }
+
     static {
         FACING = HorizontalFacingBlock.FACING;
         HALF = Properties.DOUBLE_BLOCK_HALF;
+        SHAPE = Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
     }
 }

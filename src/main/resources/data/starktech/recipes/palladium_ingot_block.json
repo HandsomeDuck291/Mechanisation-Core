@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "palladium_ingot",
+  "ingredients": [
+    {
+      "item": "starktech:palladium_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "starktech:palladium_ingot"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "cookingtime": 100,
+  "experience": 0.7,
+  "group": "palladium_ingot",
+  "ingredient": {
+    "item": "starktech:raw_palladium"
+  },
+  "result": "starktech:palladium_ingot"
+}

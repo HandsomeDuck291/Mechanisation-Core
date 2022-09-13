@@ -32,11 +32,16 @@ public class ObjectRegistry {
 
     // Blocks
     public static final EquipPad EQUIP_PAD = create("equip_pad", new EquipPad(FabricBlockSettings.of(Material.METAL).strength(4.0f).requiresTool()), true);
-    public static final SuitConstructor CONSTRUCTOR = create("suit_constructor", new SuitConstructor(FabricBlockSettings.of(Material.METAL).strength(4.0f).requiresTool()), true);
+    public static final SuitConstructor CONSTRUCTOR = create("suit_constructor", new SuitConstructor(FabricBlockSettings.of(Material.METAL).strength(4.0f).requiresTool().nonOpaque()), true);
+    // Palladium Blocks
     public static final Block PALLADIUM_ORE = create("palladium_ore", new Block(FabricBlockSettings.of(Material.STONE).strength(4.0f).requiresTool()), true);
+    public static final Block DEEPSLATE_PALLADIUM_ORE = create("deepslate_palladium_ore", new Block(FabricBlockSettings.of(Material.STONE).strength(6.0f).requiresTool()), true);
+    public static final Block RAW_PALLADIUM_BLOCK = create("raw_palladium_block", new Block(FabricBlockSettings.of(Material.METAL).strength(4.0f).requiresTool()), true);
+    public static final Block PALLADIUM_BLOCK = create("palladium_block", new Block(FabricBlockSettings.of(Material.METAL).strength(4.0f).requiresTool()), true);
 
     // Items
-    public static final Item PALLADIUM = create("palladium", new Item(gen()));
+    public static final Item PALLADIUM_INGOT = create("palladium_ingot", new Item(gen()));
+    public static final Item RAW_PALLADIUM = create("raw_palladium", new Item(gen()));
 
     // Block Entity
     public static final BlockEntityType<EquipPadEntity> EQUIP_PAD_ENTITY = Registry.register(

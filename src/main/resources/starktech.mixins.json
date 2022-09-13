@@ -4,12 +4,10 @@
   "package": "handsomeduck.starktech.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "OrePlacedFeaturesAccessor"
   ],
   "client": [
     "TitleMixin"
-  ],
-  "server": [
-
   ],
   "injectors": {
     "defaultRequire": 1

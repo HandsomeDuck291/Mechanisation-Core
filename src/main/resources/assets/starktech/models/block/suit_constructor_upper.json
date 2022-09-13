@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "starktech:block/suit_constructor_upper"
+  }
+}

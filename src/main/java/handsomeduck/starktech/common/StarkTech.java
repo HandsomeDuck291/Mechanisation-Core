@@ -1,9 +1,6 @@
 package handsomeduck.starktech.common;
 
-import handsomeduck.starktech.common.registry.ArmourRegistry;
-import handsomeduck.starktech.common.registry.EntityRegistry;
-import handsomeduck.starktech.common.registry.ObjectRegistry;
-import handsomeduck.starktech.common.registry.ScreenRegistry;
+import handsomeduck.starktech.common.registry.*;
 import net.fabricmc.api.ModInitializer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -25,6 +22,7 @@ public class StarkTech implements ModInitializer {
 		EntityRegistry.init();
 		ScreenRegistry.init();
 		ArmourRegistry.init();
+		WorldGeneration.init();
 
 
 		LOGGER.info("Initialization done, CLANK!");

@@ -1,5 +1,5 @@
 {
-  "parent": "starktech:block/suit_constructor",
+  "parent": "builtin/entity",
   "display": {
     "thirdperson_righthand": {
       "rotation": [ 30, 160, 0 ],
