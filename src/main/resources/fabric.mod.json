@@ -22,6 +22,9 @@
     ],
     "client": [
       "handsomeduck.starktech.common.IronClient"
+    ],
+    "fabric-datagen": [
+      "handsomeduck.starktech.api.StarkTechDataGen"
     ]
   },
   "mixins": [

@@ -1,12 +1,12 @@
 package handsomeduck.starktech.client.screen;
 
+import handsomeduck.starktech.common.item.ArcReactor;
 import handsomeduck.starktech.common.registry.ScreenRegistry;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.SimpleInventory;
-import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
@@ -92,7 +92,7 @@ public class SuitConstructorHandler extends ScreenHandler {
 
         @Override
         public boolean canInsert(ItemStack stack) {
-            return (stack.getItem() instanceof ArmorItem armorItem) && (armorItem.getSlotType() == type);
+            return (stack.getItem() instanceof ArcReactor arcReactor) && (arcReactor.getSlotType() == type);
         }
     }
 }
