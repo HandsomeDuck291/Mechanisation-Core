@@ -9,7 +9,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 public class SuitConstructorScreen extends HandledScreen<SuitConstructorHandler> {
-    private static final Identifier TEXTURE = new Identifier("minecraft", "textures/gui/container/dispenser.png");
+    private static final Identifier TEXTURE = new Identifier("starktech", "textures/gui/suit_constructor.png");
 
     public SuitConstructorScreen(SuitConstructorHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);

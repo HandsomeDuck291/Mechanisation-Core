@@ -29,9 +29,7 @@ public class EntityRegistry {
     }
 
     public static void init() {
+        StarkTech.LOGGER.info("Registering Mod Entities for " + StarkTech.MOD_ID);
         ENTITY_TYPES.keySet().forEach(entityType -> Registry.register(Registry.ENTITY_TYPE, ENTITY_TYPES.get(entityType), entityType));
-    }
-
-    public static void registerModEntities(){ StarkTech.LOGGER.info("Registering Mod Entities for " + StarkTech.MOD_ID);
     }
 }

@@ -15,9 +15,10 @@ import net.minecraft.screen.ScreenHandler;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 
 public class SuitConstructorEntity extends BlockEntity implements NamedScreenHandlerFactory, ImplementedInventory {
-    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(9, ItemStack.EMPTY);
+    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(4, ItemStack.EMPTY);
 
     public SuitConstructorEntity(BlockPos pos, BlockState state) {
         super(ObjectRegistry.SUIT_CONSTRUCTOR_ENTITY, pos, state);
@@ -25,7 +26,7 @@ public class SuitConstructorEntity extends BlockEntity implements NamedScreenHan
 
     @Override
     public DefaultedList<ItemStack> getItems() {
-        return inventory;
+        return this.inventory;
     }
 
     @Override
@@ -48,5 +49,9 @@ public class SuitConstructorEntity extends BlockEntity implements NamedScreenHan
     public void writeNbt(NbtCompound nbt) {
         Inventories.writeNbt(nbt, this.inventory);
         super.writeNbt(nbt);
+    }
+
+    public static <E extends BlockEntity> void tick(World world, BlockPos blockPos, BlockState state, SuitConstructorEntity entity) {
+
     }
 }

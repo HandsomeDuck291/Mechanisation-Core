@@ -1,8 +1,8 @@
 package handsomeduck.starktech.common.item;
 
+import handsomeduck.starktech.common.registry.ObjectRegistry;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorMaterial;
-import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
@@ -33,7 +33,7 @@ public class PalladiumMaterial implements ArmorMaterial {
 
     @Override
     public Ingredient getRepairIngredient() {
-        return Ingredient.ofItems(Items.IRON_INGOT);
+        return Ingredient.ofItems(ObjectRegistry.PALLADIUM_INGOT);
     }
 
     @Override

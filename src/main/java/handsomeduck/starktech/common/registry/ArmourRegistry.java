@@ -4,6 +4,7 @@ import handsomeduck.starktech.common.StarkTech;
 import handsomeduck.starktech.common.item.ArcReactor;
 import handsomeduck.starktech.common.item.PalladiumMaterial;
 import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
@@ -20,6 +21,11 @@ public class ArmourRegistry {
 
     public static final ArcReactor ARC1 = create( "arc1", new ArcReactor(PALLADIUM_MATERIAL, EquipmentSlot.CHEST, gen()));
 
+    public static final Item HELM = create("helm", new ArmorItem(PALLADIUM_MATERIAL, EquipmentSlot.HEAD, gen()));
+    public static final Item CHEST = create("chest", new ArmorItem(PALLADIUM_MATERIAL, EquipmentSlot.CHEST, gen()));
+    public static final Item PANT = create("pant", new ArmorItem(PALLADIUM_MATERIAL, EquipmentSlot.LEGS, gen()));
+    public static final Item BOOT = create("boot", new ArmorItem(PALLADIUM_MATERIAL, EquipmentSlot.FEET, gen()));
+
     // Functions
     private static <T extends Item> T create(String name, T item) {
         ITEMS.put(item, new Identifier(StarkTech.MOD_ID, name));
@@ -31,11 +37,7 @@ public class ArmourRegistry {
     }
 
     public static void init() {
-        ITEMS.keySet().forEach(item -> Registry.register(Registry.ITEM, ITEMS.get(item), item));
-    }
-
-    // Logger
-    public static void registerModArmour(){
         StarkTech.LOGGER.info("Registering Mod Armour for " + StarkTech.MOD_ID);
+        ITEMS.keySet().forEach(item -> Registry.register(Registry.ITEM, ITEMS.get(item), item));
     }
 }

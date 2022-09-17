@@ -15,9 +15,6 @@ public class StarkTech implements ModInitializer {
 	public void onInitialize() {
 		GeckoLib.initialize();
 
-		ObjectRegistry.registerModItems();
-		EntityRegistry.registerModEntities();
-		ArmourRegistry.registerModArmour();
 		ObjectRegistry.init();
 		EntityRegistry.init();
 		ScreenRegistry.init();

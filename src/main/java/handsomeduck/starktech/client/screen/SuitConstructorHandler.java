@@ -1,10 +1,12 @@
 package handsomeduck.starktech.client.screen;
 
 import handsomeduck.starktech.common.registry.ScreenRegistry;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.SimpleInventory;
+import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
@@ -12,43 +14,24 @@ import net.minecraft.screen.slot.Slot;
 public class SuitConstructorHandler extends ScreenHandler {
     private final Inventory inventory;
 
-    //This constructor gets called on the client when the server wants it to open the screenHandler,
-    //The client will call the other constructor with an empty Inventory and the screenHandler will automatically
-    //sync this empty inventory with the inventory on the server.
     public SuitConstructorHandler(int syncId, PlayerInventory playerInventory) {
-        this(syncId, playerInventory, new SimpleInventory(9));
+        this(syncId, playerInventory, new SimpleInventory(4));
     }
 
-    //This constructor gets called from the BlockEntity on the server without calling the other constructor first, the server knows the inventory of the container
-    //and can therefore directly provide it as an argument. This inventory will then be synced to the client.
     public SuitConstructorHandler(int syncId, PlayerInventory playerInventory, Inventory inventory) {
         super(ScreenRegistry.SUIT_CONSTRUCTOR_HANDLER, syncId);
-        checkSize(inventory, 9);
+        checkSize(inventory, 4);
         this.inventory = inventory;
         //some inventories do custom logic when a player opens it.
         inventory.onOpen(playerInventory.player);
 
-        //This will place the slot in the correct locations for a 3x3 Grid. The slots exist on both server and client!
-        //This will not render the background of the slots however, this is the Screens job
-        int m;
-        int l;
-        //Our inventory
-        for (m = 0; m < 3; ++m) {
-            for (l = 0; l < 3; ++l) {
-                this.addSlot(new Slot(inventory, l + m * 3, 62 + l * 18, 17 + m * 18));
-            }
-        }
-        //The player inventory
-        for (m = 0; m < 3; ++m) {
-            for (l = 0; l < 9; ++l) {
-                this.addSlot(new Slot(playerInventory, l + m * 9 + 9, 8 + l * 18, 84 + m * 18));
-            }
-        }
-        //The player Hotbar
-        for (m = 0; m < 9; ++m) {
-            this.addSlot(new Slot(playerInventory, m, 8 + m * 18, 142));
-        }
+        this.addSlot(new ArmourSlot(inventory, 0, 13, 6, EquipmentSlot.HEAD));
+        this.addSlot(new ArmourSlot(inventory, 1, 13, 24, EquipmentSlot.CHEST));
+        this.addSlot(new ArmourSlot(inventory, 2, 13, 42, EquipmentSlot.LEGS));
+        this.addSlot(new ArmourSlot(inventory, 3, 13, 60, EquipmentSlot.FEET));
 
+        addPlayerInventory(playerInventory);
+        addPlayerHotbar(playerInventory);
     }
 
     @Override
@@ -80,5 +63,36 @@ public class SuitConstructorHandler extends ScreenHandler {
         }
 
         return newStack;
+    }
+
+    private void addPlayerInventory(PlayerInventory playerInventory) {
+        int i;
+        for (i = 0; i < 3; ++i) {
+            int l;
+            for (l = 0; l < 9; ++l) {
+                this.addSlot(new Slot(playerInventory, l + i * 9 + 9, 8 + l * 18, 86 + i * 18));
+            }
+        }
+    }
+
+    private void addPlayerHotbar(PlayerInventory playerInventory) {
+        int i;
+        for (i = 0; i < 9; ++i) {
+            this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 144));
+        }
+    }
+
+    private class ArmourSlot extends Slot {
+        private final EquipmentSlot type;
+
+        public ArmourSlot(Inventory inventory, int index, int x, int y, EquipmentSlot type) {
+            super(inventory, index, x, y);
+            this.type = type;
+        }
+
+        @Override
+        public boolean canInsert(ItemStack stack) {
+            return (stack.getItem() instanceof ArmorItem armorItem) && (armorItem.getSlotType() == type);
+        }
     }
 }

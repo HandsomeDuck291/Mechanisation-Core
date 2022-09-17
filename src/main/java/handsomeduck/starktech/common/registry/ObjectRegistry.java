@@ -70,12 +70,8 @@ public class ObjectRegistry {
     }
 
     public static void init() {
+        StarkTech.LOGGER.info("Registering Mod Items for " + StarkTech.MOD_ID);
         ITEMS.keySet().forEach(item -> Registry.register(Registry.ITEM, ITEMS.get(item), item));
         BLOCKS.keySet().forEach(block -> Registry.register(Registry.BLOCK, BLOCKS.get(block), block));
-    }
-
-    // Logger
-    public static void registerModItems(){
-        StarkTech.LOGGER.info("Registering Mod Items for " + StarkTech.MOD_ID);
     }
 }
