@@ -1,0 +1,36 @@
+{
+  "variants": {
+    "facing=north,half=lower": {
+      "y": 0,
+      "model": "mechacore:block/suit_constructor"
+    },
+    "facing=south,half=lower": {
+      "y": 180,
+      "model": "mechacore:block/suit_constructor"
+    },
+    "facing=east,half=lower": {
+      "y": 90,
+      "model": "mechacore:block/suit_constructor"
+    },
+    "facing=west,half=lower": {
+      "y": 270,
+      "model": "mechacore:block/suit_constructor"
+    },
+    "facing=north,half=upper": {
+      "y": 0,
+      "model": "mechacore:block/suit_constructor_upper"
+    },
+    "facing=south,half=upper": {
+      "y": 180,
+      "model": "mechacore:block/suit_constructor_upper"
+    },
+    "facing=east,half=upper": {
+      "y": 90,
+      "model": "mechacore:block/suit_constructor_upper"
+    },
+    "facing=west,half=upper": {
+      "y": 270,
+      "model": "mechacore:block/suit_constructor_upper"
+    }
+  }
+}

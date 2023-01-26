@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "mechacore:block/suit_constructor_upper"
+  }
+}

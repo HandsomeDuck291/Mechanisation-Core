@@ -22,15 +22,17 @@ repositories {
 	}
 }
 
+def dataOutput = 'src/main/generated'
+
 loom {
 	runs {
 		// This adds a new gradle task that runs the datagen API: "gradlew runDatagenClient"
-		datagenClient {
-			inherit client
+		datagen {
+			server()
+
 			name "Data Generation"
 			vmArg "-Dfabric-api.datagen"
 			vmArg "-Dfabric-api.datagen.output-dir=${file("src/main/generated")}"
-			vmArg "-Dfabric-api.datagen.strict-validation"
 
 			runDir "build/datagen"
 		}

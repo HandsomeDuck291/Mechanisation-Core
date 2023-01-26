@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "id": "starktech",
+  "id": "mechcore",
   "version": "${version}",
 
-  "name": "Stark Tech",
-  "description": "Release you inner robot, and make a suit while your at it.",
+  "name": "Mechanisation Core",
+  "description": "GOLD TITANIUM ALLOY MAN",
   "authors": [
     "HandsomeDuck"
   ],
@@ -13,22 +13,22 @@
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/starktech/icon.png",
+  "icon": "assets/mechacore/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "handsomeduck.starktech.common.StarkTech"
+      "handsomeduck.mechacore.common.MechaCore"
     ],
     "client": [
-      "handsomeduck.starktech.common.IronClient"
+      "handsomeduck.mechacore.common.MechaCoreClient"
     ],
     "fabric-datagen": [
-      "handsomeduck.starktech.api.StarkTechDataGen"
+      "handsomeduck.mechacore.api.MechaCoreDataGen"
     ]
   },
   "mixins": [
-    "starktech.mixins.json"
+    "mechacore.mixins.json"
   ],
 
   "depends": {

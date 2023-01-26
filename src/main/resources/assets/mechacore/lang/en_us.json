@@ -1,0 +1,25 @@
+{
+  "itemGroup.mechacore.mecha_clutter": "Mechanisation",
+
+  "item.mechacore.arc1": "Arc Reactor Tier 1",
+
+  "item.mechacore.helm": "Exo-Suit Helmet",
+  "item.mechacore.chest": "Exo-Suit Torso",
+  "item.mechacore.pant": "Exo-Suit Legs",
+  "item.mechacore.boot": "Exo-Suit Boots",
+
+  "item.mechacore.palladium_ingot": "Palladium Ingot",
+  "item.mechacore.raw_palladium": "Raw Palladium",
+
+  "block.mechacore.equip_pad": "Equip Pad",
+  "block.mechacore.suit_constructor": "Suit Constructor",
+
+  "block.mechacore.palladium_ore": "Palladium Ore",
+  "block.mechacore.deepslate_palladium_ore": "Deepslate Palladium Ore",
+  "block.mechacore.raw_palladium_block": "Raw Palladium Block",
+  "block.mechacore.palladium_block": "Palladium Block",
+
+  "entity.mechacore.ENTITY": "",
+
+  "fabricator.fabricate": "Fabricate"
+}

@@ -5,6 +5,7 @@
     "starktech:suit_constructor",
     "starktech:palladium_ore",
     "starktech:deepslate_palladium_ore",
-    "starktech:raw_palladium_block"
+    "starktech:raw_palladium_block",
+    "starktech:palladium_block"
   ]
 }
