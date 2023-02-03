@@ -1,6 +1,7 @@
 package handsomeduck.mechacore.client.gui.screen;
 
 import com.mojang.blaze3d.systems.RenderSystem;
+import handsomeduck.mechacore.api.MechaCorePackets;
 import handsomeduck.mechacore.common.gui.SuitConstructorHandler;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -47,7 +48,7 @@ public class SuitConstructorScreen extends HandledScreen<SuitConstructorHandler>
 
         int y = (height - backgroundHeight) / 2;
         this.addDrawableChild(new ButtonWidget(this.width / 2 + 8, y + 57, 68, 20, Text.translatable("fabricator.fabricate"), (button) -> {
-            ClientPlayNetworking.send(SuitConstructorHandler.FABRICATION_ID, PacketByteBufs.empty());
+            ClientPlayNetworking.send(MechaCorePackets.FABRICATION_ID, PacketByteBufs.empty());
         }));
     }
 }

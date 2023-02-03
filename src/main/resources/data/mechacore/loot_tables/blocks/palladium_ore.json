@@ -24,7 +24,7 @@
                   }
                 }
               ],
-              "name": "starktech:palladium_ore"
+              "name": "mechacore:palladium_ore"
             },
             {
               "type": "minecraft:item",
@@ -33,7 +33,7 @@
                   "condition": "minecraft:survives_explosion"
                 }
               ],
-              "name": "starktech:raw_palladium"
+              "name": "mechacore:raw_palladium"
             }
           ]
         }

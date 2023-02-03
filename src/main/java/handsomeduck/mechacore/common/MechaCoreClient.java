@@ -4,7 +4,6 @@ import handsomeduck.mechacore.client.gui.screen.EquipPadScreen;
 import handsomeduck.mechacore.client.gui.screen.SuitConstructorScreen;
 import handsomeduck.mechacore.client.model.equipment.armour.SkinTightTestModel;
 import handsomeduck.mechacore.client.renderer.SkinTightTestRenderer;
-import handsomeduck.mechacore.common.block.client.SuitConstuctorBlockEntityRender;
 import handsomeduck.mechacore.common.registry.ArmourRegistry;
 import handsomeduck.mechacore.common.registry.ObjectRegistry;
 import handsomeduck.mechacore.common.registry.ScreenRegistry;
@@ -13,7 +12,6 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ArmorRenderer;
-import net.fabricmc.fabric.api.client.rendering.v1.BlockEntityRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
@@ -40,7 +38,6 @@ public class MechaCoreClient implements ClientModInitializer {
         ArmorRenderer.register(new SkinTightTestRenderer(new Identifier(MechaCore.MOD_ID, "textures/entity/armor/steve.png"),
                 ArmourRegistry.HELM), ArmourRegistry.HELM, ArmourRegistry.CHEST, ArmourRegistry.PANT, ArmourRegistry.BOOT);
 
-        BlockEntityRendererRegistry.register(ObjectRegistry.SUIT_CONSTRUCTOR_ENTITY, SuitConstuctorBlockEntityRender::new);
     }
 
     private static ModelPart getPart(EntityModelLayer layer) {

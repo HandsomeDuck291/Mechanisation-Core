@@ -62,10 +62,6 @@ public class SuitConstructorEntity extends BlockEntity implements NamedScreenHan
 
     }
 
-    public ItemStack getRenderStack() {
-        return this.getStack(1);
-    }
-
     @Override
     public void markDirty() {
         if(!world.isClient()) {

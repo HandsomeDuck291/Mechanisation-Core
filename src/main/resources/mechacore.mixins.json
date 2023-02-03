@@ -7,7 +7,6 @@
     "OrePlacedFeaturesAccessor"
   ],
   "client": [
-    "TitleMixin",
     "PlayerEntityRendererMixin"
   ],
   "injectors": {

@@ -45,7 +45,16 @@ public class SuitConstructor extends BlockWithEntity{
     @Override
     public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
         if (!world.isClient && player.isCreative()) {
-            BlockProtectedFieldFunctions.onBreakInCreative(world, pos, state, player);
+            DoubleBlockHalf doubleBlockHalf = (DoubleBlockHalf)state.get(HALF);
+            if (doubleBlockHalf == DoubleBlockHalf.UPPER) {
+                BlockPos blockPos = pos.up();
+                BlockState blockState = world.getBlockState(blockPos);
+                if (blockState.isOf(state.getBlock()) && blockState.get(HALF) == DoubleBlockHalf.LOWER) {
+                    BlockState blockState2 = blockState.contains(Properties.WATERLOGGED) && (Boolean)blockState.get(Properties.WATERLOGGED) ? Blocks.WATER.getDefaultState() : Blocks.AIR.getDefaultState();
+                    world.setBlockState(blockPos, blockState2, 35);
+                    world.syncWorldEvent(player, 2001, blockPos, Block.getRawIdFromState(blockState));
+                }
+            }
         }
 
         super.onBreak(world, pos, state, player);

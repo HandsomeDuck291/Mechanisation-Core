@@ -13,10 +13,12 @@ public class MechaCorePackets {
     public static final Identifier ITEM_SYNC = new Identifier(MechaCore.MOD_ID, "item_sync");
 
     public static void registerC2SPackets() {
+        MechaCore.LOGGER.info("C2S Packets Registered for " + MechaCore.MOD_ID);
         ServerPlayNetworking.registerGlobalReceiver(FABRICATION_ID, ArmorCreationC2SPacket::receive);
     }
 
     public static void registerS2CPackets() {
+        MechaCore.LOGGER.info("S2C Packets Registered for " + MechaCore.MOD_ID);
         ClientPlayNetworking.registerGlobalReceiver(ITEM_SYNC, ItemStackSyncS2CPacket::receive);
     }
 }

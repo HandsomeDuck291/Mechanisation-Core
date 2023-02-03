@@ -21,11 +21,11 @@ public class WorldGeneration {
 
     public static final List<OreFeatureConfig.Target> PALLADIUM_ORES = List.of(OreFeatureConfig.createTarget(OreConfiguredFeatures.STONE_ORE_REPLACEABLES, ObjectRegistry.PALLADIUM_ORE.getDefaultState()), OreFeatureConfig.createTarget(OreConfiguredFeatures.DEEPSLATE_ORE_REPLACEABLES, ObjectRegistry.DEEPSLATE_PALLADIUM_ORE.getDefaultState()));
 
-    public static final RegistryEntry<ConfiguredFeature<OreFeatureConfig, ?>> PALLADIUM_ORE = ConfiguredFeatures.register("starktech:palladium_ore", Feature.ORE, new OreFeatureConfig(PALLADIUM_ORES, 10));
-    public static final RegistryEntry<ConfiguredFeature<OreFeatureConfig, ?>> PALLADIUM_ORE_BURIED = ConfiguredFeatures.register("starktech:palladium_ore_buried", Feature.ORE, new OreFeatureConfig(PALLADIUM_ORES, 10));
+    public static final RegistryEntry<ConfiguredFeature<OreFeatureConfig, ?>> PALLADIUM_ORE = ConfiguredFeatures.register("mechacore:palladium_ore", Feature.ORE, new OreFeatureConfig(PALLADIUM_ORES, 10));
+    public static final RegistryEntry<ConfiguredFeature<OreFeatureConfig, ?>> PALLADIUM_ORE_BURIED = ConfiguredFeatures.register("mechacore:palladium_ore_buried", Feature.ORE, new OreFeatureConfig(PALLADIUM_ORES, 10));
 
-    public static final RegistryEntry<PlacedFeature> PALLADIUM_ORE_UPPER = PlacedFeatures.register("starktech:palladium_ore_buried", PALLADIUM_ORE_BURIED, OrePlacedFeaturesAccessor.callModifiersWithCount(4, HeightRangePlacementModifier.trapezoid(YOffset.fixed(-64), YOffset.fixed(32))));
-    public static final RegistryEntry<PlacedFeature> PALLADIUM_ORE_LOWER = PlacedFeatures.register("starktech:palladium_ore_lower", PALLADIUM_ORE_BURIED, OrePlacedFeaturesAccessor.callModifiers(CountPlacementModifier.of(UniformIntProvider.create(0, 1)), HeightRangePlacementModifier.uniform(YOffset.fixed(-64), YOffset.fixed(-48))));
+    public static final RegistryEntry<PlacedFeature> PALLADIUM_ORE_UPPER = PlacedFeatures.register("mechacore:palladium_ore_buried", PALLADIUM_ORE_BURIED, OrePlacedFeaturesAccessor.callModifiersWithCount(4, HeightRangePlacementModifier.trapezoid(YOffset.fixed(-64), YOffset.fixed(32))));
+    public static final RegistryEntry<PlacedFeature> PALLADIUM_ORE_LOWER = PlacedFeatures.register("mechacore:palladium_ore_lower", PALLADIUM_ORE_BURIED, OrePlacedFeaturesAccessor.callModifiers(CountPlacementModifier.of(UniformIntProvider.create(0, 1)), HeightRangePlacementModifier.uniform(YOffset.fixed(-64), YOffset.fixed(-48))));
 
     public static void init() {
         BiomeModification worldGen = BiomeModifications.create(new Identifier(MechaCore.MOD_ID, "world_features"));

@@ -10,7 +10,7 @@ import software.bernie.geckolib3.GeckoLib;
 public class MechaCore implements ModInitializer {
 
 	public static final String MOD_ID = "mechacore";
-	public static final Logger LOGGER = LogManager.getLogger("mechacore:");
+	public static final Logger LOGGER = LogManager.getLogger("mechacore");
 
 	@Override
 	public void onInitialize() {

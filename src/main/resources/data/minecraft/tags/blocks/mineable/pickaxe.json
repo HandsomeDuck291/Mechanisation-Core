@@ -1,11 +1,11 @@
 {
   "replace": false,
   "values": [
-    "starktech:equip_pad",
-    "starktech:suit_constructor",
-    "starktech:palladium_ore",
-    "starktech:deepslate_palladium_ore",
-    "starktech:raw_palladium_block",
-    "starktech:palladium_block"
+    "mechacore:equip_pad",
+    "mechacore:suit_constructor",
+    "mechacore:palladium_ore",
+    "mechacore:deepslate_palladium_ore",
+    "mechacore:raw_palladium_block",
+    "mechacore:palladium_block"
   ]
 }

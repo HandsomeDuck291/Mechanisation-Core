@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "starktech:raw_palladium_block"
+          "name": "mechacore:raw_palladium_block"
         }
       ],
       "conditions": [

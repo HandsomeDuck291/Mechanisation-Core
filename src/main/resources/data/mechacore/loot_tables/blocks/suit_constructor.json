@@ -13,14 +13,14 @@
           "type": "minecraft:item",
           "conditions": [
             {
-              "block": "starktech:suit_constructor",
+              "block": "mechacore:suit_constructor",
               "condition": "minecraft:block_state_property",
               "properties": {
                 "half": "lower"
               }
             }
           ],
-          "name": "starktech:suit_constructor"
+          "name": "mechacore:suit_constructor"
         }
       ],
       "rolls": 1.0
