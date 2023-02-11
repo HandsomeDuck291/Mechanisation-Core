@@ -1,6 +1,5 @@
 package handsomeduck.mechacore.common.gui;
 
-import handsomeduck.mechacore.common.MechaCore;
 import handsomeduck.mechacore.common.item.ElectricalArmourItem;
 import handsomeduck.mechacore.common.registry.ScreenRegistry;
 import net.minecraft.entity.EquipmentSlot;
@@ -11,28 +10,32 @@ import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
-import net.minecraft.util.Identifier;
 
 
-public class SuitConstructorHandler extends ScreenHandler {
+public class ModuleTableHandler extends ScreenHandler {
     private final Inventory inventory;
-    public static final Identifier FABRICATION_ID = new Identifier(MechaCore.MOD_ID, "fabrication");
 
-    public SuitConstructorHandler(int syncId, PlayerInventory playerInventory) {
-        this(syncId, playerInventory, new SimpleInventory(4));
-    }
+    public ModuleTableHandler(int syncId, PlayerInventory playerInventory) {
+        this(syncId, playerInventory, new SimpleInventory(4)); }
 
-    public SuitConstructorHandler(int syncId, PlayerInventory playerInventory, Inventory inventory) {
-        super(ScreenRegistry.SUIT_CONSTRUCTOR_HANDLER, syncId);
+    public ModuleTableHandler(int syncId, PlayerInventory playerInventory, Inventory inventory) {
+        super(ScreenRegistry.MODULE_TABLE_HANDLER, syncId);
         checkSize(inventory, 4);
         this.inventory = inventory;
         //some inventories do custom logic when a player opens it.
         inventory.onOpen(playerInventory.player);
 
-        this.addSlot(new ArmourSlot(inventory, 0, 71, 6, EquipmentSlot.HEAD));
-        this.addSlot(new ArmourSlot(inventory, 1, 89, 6, EquipmentSlot.CHEST));
-        this.addSlot(new ArmourSlot(inventory, 2, 71, 24, EquipmentSlot.LEGS));
-        this.addSlot(new ArmourSlot(inventory, 3, 89, 24, EquipmentSlot.FEET));
+        this.addSlot(new ArmourSlot(inventory, 0, 8, 6, EquipmentSlot.HEAD));
+        this.addSlot(new ArmourSlot(inventory, 1, 8, 24, EquipmentSlot.CHEST));
+        this.addSlot(new ArmourSlot(inventory, 2, 8, 42, EquipmentSlot.LEGS));
+        this.addSlot(new ArmourSlot(inventory, 3, 8, 60, EquipmentSlot.FEET));
+
+        if(!this.getSlot(1).getStack().isEmpty()) {
+            int i;
+            for (i = 0; i < 9; ++i) {
+                this.addSlot(Slot(armourInventory, i, 5, 4 + i * 18));
+            }
+        }
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);

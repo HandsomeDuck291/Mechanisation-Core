@@ -1,8 +1,8 @@
 package handsomeduck.mechacore.common.registry;
 
 import handsomeduck.mechacore.common.MechaCore;
-import handsomeduck.mechacore.common.block.EquipPad;
-import handsomeduck.mechacore.common.block.EquipPadEntity;
+import handsomeduck.mechacore.common.block.ModuleTable;
+import handsomeduck.mechacore.common.block.ModuleTableEntity;
 import handsomeduck.mechacore.common.block.SuitConstructor;
 import handsomeduck.mechacore.common.block.SuitConstructorEntity;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
@@ -28,11 +28,11 @@ public class ObjectRegistry {
     // Item Tabs
     public static final ItemGroup mech_clutter = FabricItemGroupBuilder
             .create(new Identifier(MechaCore.MOD_ID, "mecha_clutter"))
-            .icon(() -> new ItemStack(ArmourRegistry.ARC1)).build();
+            .icon(() -> new ItemStack(ObjectRegistry.PALLADIUM_BLOCK)).build();
 
     // Blocks
-    public static final EquipPad EQUIP_PAD = create("equip_pad", new EquipPad(FabricBlockSettings.of(Material.METAL).strength(4.0f).requiresTool()), true);
-    public static final SuitConstructor CONSTRUCTOR = create("suit_constructor", new SuitConstructor(FabricBlockSettings.of(Material.METAL).strength(4.0f).requiresTool().nonOpaque()), true);
+    public static final SuitConstructor CONSTRUCTOR = create("suit_constructor", new SuitConstructor(FabricBlockSettings.of(Material.STONE).strength(4.0f).nonOpaque()), true);
+    public static final ModuleTable MODULE_TABLE = create("module_table", new ModuleTable(FabricBlockSettings.of(Material.METAL).strength(4.0f).requiresTool().nonOpaque()), true);
     // Palladium Blocks
     public static final Block PALLADIUM_ORE = create("palladium_ore", new Block(FabricBlockSettings.of(Material.STONE).strength(4.0f).requiresTool()), true);
     public static final Block DEEPSLATE_PALLADIUM_ORE = create("deepslate_palladium_ore", new Block(FabricBlockSettings.of(Material.STONE).strength(6.0f).requiresTool()), true);
@@ -44,12 +44,12 @@ public class ObjectRegistry {
     public static final Item RAW_PALLADIUM = create("raw_palladium", new Item(gen()));
 
     // Block Entity
-    public static final BlockEntityType<EquipPadEntity> EQUIP_PAD_ENTITY = Registry.register(
-            Registry.BLOCK_ENTITY_TYPE, new Identifier(MechaCore.MOD_ID, "equip_pad"),
-            FabricBlockEntityTypeBuilder.create(EquipPadEntity::new, EQUIP_PAD).build(null));
     public static final BlockEntityType<SuitConstructorEntity> SUIT_CONSTRUCTOR_ENTITY = Registry.register(
             Registry.BLOCK_ENTITY_TYPE, new Identifier(MechaCore.MOD_ID, "suit_constructor"),
             FabricBlockEntityTypeBuilder.create(SuitConstructorEntity::new, CONSTRUCTOR).build(null));
+    public static final BlockEntityType<ModuleTableEntity> MODULE_TABLE_ENTITY = Registry.register(
+            Registry.BLOCK_ENTITY_TYPE, new Identifier(MechaCore.MOD_ID, "module_table"),
+            FabricBlockEntityTypeBuilder.create(ModuleTableEntity::new, MODULE_TABLE).build(null));
 
     // Functions
     private static <T extends Block> T create(String name, T block, boolean createItem) {

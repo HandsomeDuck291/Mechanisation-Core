@@ -1,7 +1,9 @@
 package handsomeduck.mechacore.client.gui.screen;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import handsomeduck.mechacore.common.gui.EquipPadHandler;
+import handsomeduck.mechacore.common.gui.ModuleTableHandler;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.render.GameRenderer;
 import net.minecraft.client.util.math.MatrixStack;
@@ -9,11 +11,11 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
-public class EquipPadScreen extends HandledScreen<EquipPadHandler> {
-    //A path to the gui texture. In this example we use the texture from the dispenser
-    private static final Identifier TEXTURE = new Identifier("minecraft", "textures/gui/container/dispenser.png");
+@Environment(EnvType.CLIENT)
+public class ModuleTableScreen extends HandledScreen<ModuleTableHandler> {
+    private static final Identifier TEXTURE = new Identifier("mechacore", "textures/gui/module_table.png");
 
-    public EquipPadScreen(EquipPadHandler handler, PlayerInventory inventory, Text title) {
+    public ModuleTableScreen(ModuleTableHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);
     }
 
@@ -28,6 +30,10 @@ public class EquipPadScreen extends HandledScreen<EquipPadHandler> {
     }
 
     @Override
+    protected void drawForeground(MatrixStack matrices, int mouseX, int mouseY) {
+    }
+
+    @Override
     public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
         renderBackground(matrices);
         super.render(matrices, mouseX, mouseY, delta);
@@ -37,6 +43,5 @@ public class EquipPadScreen extends HandledScreen<EquipPadHandler> {
     @Override
     protected void init() {
         super.init();
-        titleX = (backgroundWidth - textRenderer.getWidth(title)) / 2;
     }
 }

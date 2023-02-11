@@ -1,6 +1,6 @@
 package handsomeduck.mechacore.mixin;
 
-import handsomeduck.mechacore.common.item.IronSuit;
+import handsomeduck.mechacore.common.item.ElectricalArmourItem;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
@@ -34,15 +34,15 @@ public abstract class PlayerEntityRendererMixin extends LivingEntityRenderer<Abs
     @Inject(method = "setModelPose(Lnet/minecraft/client/network/AbstractClientPlayerEntity;)V", at = @At("TAIL"))
     private void setModelPose(AbstractClientPlayerEntity player, CallbackInfo ci) {
         PlayerEntityModel<AbstractClientPlayerEntity> playerEntityModel = (PlayerEntityModel)this.getModel();
-        if (player.getEquippedStack(EquipmentSlot.HEAD).getItem() instanceof IronSuit ironSuit) {
+        if (player.getEquippedStack(EquipmentSlot.HEAD).getItem() instanceof ElectricalArmourItem electricalArmourItem) {
             playerEntityModel.hat.visible = false;
         }
-        if (player.getEquippedStack(EquipmentSlot.CHEST).getItem() instanceof IronSuit ironSuit) {
+        if (player.getEquippedStack(EquipmentSlot.CHEST).getItem() instanceof ElectricalArmourItem electricalArmourItem) {
             playerEntityModel.jacket.visible = false;
             playerEntityModel.rightSleeve.visible = false;
             playerEntityModel.leftSleeve.visible = false;
         }
-        if (player.getEquippedStack(EquipmentSlot.LEGS).getItem() instanceof IronSuit ironSuit) {
+        if (player.getEquippedStack(EquipmentSlot.LEGS).getItem() instanceof ElectricalArmourItem electricalArmourItem) {
             playerEntityModel.leftPants.visible = false;
             playerEntityModel.rightPants.visible = false;
         }

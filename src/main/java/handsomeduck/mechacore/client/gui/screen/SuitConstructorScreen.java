@@ -34,6 +34,10 @@ public class SuitConstructorScreen extends HandledScreen<SuitConstructorHandler>
     }
 
     @Override
+    protected void drawForeground(MatrixStack matrices, int mouseX, int mouseY) {
+    }
+
+    @Override
     public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
         renderBackground(matrices);
         super.render(matrices, mouseX, mouseY, delta);
@@ -43,11 +47,9 @@ public class SuitConstructorScreen extends HandledScreen<SuitConstructorHandler>
     @Override
     protected void init() {
         super.init();
-        titleX = (backgroundWidth - textRenderer.getWidth(title)) / 2 + 10;
-        PlayerInventory inventory = client.player.getInventory();
 
         int y = (height - backgroundHeight) / 2;
-        this.addDrawableChild(new ButtonWidget(this.width / 2 + 8, y + 57, 68, 20, Text.translatable("fabricator.fabricate"), (button) -> {
+        this.addDrawableChild(new ButtonWidget(this.width / 2 - 28, y + 57, 56, 20, Text.translatable("fabricator.fabricate"), (button) -> {
             ClientPlayNetworking.send(MechaCorePackets.FABRICATION_ID, PacketByteBufs.empty());
         }));
     }

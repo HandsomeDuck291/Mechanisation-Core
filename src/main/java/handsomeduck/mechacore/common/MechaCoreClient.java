@@ -1,6 +1,6 @@
 package handsomeduck.mechacore.common;
 
-import handsomeduck.mechacore.client.gui.screen.EquipPadScreen;
+import handsomeduck.mechacore.client.gui.screen.ModuleTableScreen;
 import handsomeduck.mechacore.client.gui.screen.SuitConstructorScreen;
 import handsomeduck.mechacore.client.model.equipment.armour.SkinTightTestModel;
 import handsomeduck.mechacore.client.renderer.SkinTightTestRenderer;
@@ -28,11 +28,10 @@ public class MechaCoreClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-        HandledScreens.register(ScreenRegistry.EQUIP_PAD_HANDLER, EquipPadScreen::new);
         HandledScreens.register(ScreenRegistry.SUIT_CONSTRUCTOR_HANDLER, SuitConstructorScreen::new);
+        HandledScreens.register(ScreenRegistry.MODULE_TABLE_HANDLER, ModuleTableScreen::new);
 
         BlockRenderLayerMap.INSTANCE.putBlock(ObjectRegistry.CONSTRUCTOR, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ObjectRegistry.EQUIP_PAD, RenderLayer.getCutout());
 
         EntityModelLayerRegistry.registerModelLayer(SKIN_TIGHT_MODEL_LAYER, SkinTightTestModel::getTexturedModelData);
         ArmorRenderer.register(new SkinTightTestRenderer(new Identifier(MechaCore.MOD_ID, "textures/entity/armor/steve.png"),

@@ -1,0 +1,129 @@
+{
+	"textures": {
+		"0": "minecraft:block/oak_log",
+		"1": "minecraft:block/oak_planks",
+		"particle": "minecraft:block/oak_planks"
+	},
+	"elements": [
+		{
+			"name": "Leg",
+			"from": [14, 0, 14],
+			"to": [16, 14, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 18, 8.25]},
+			"color": 3,
+			"faces": {
+				"north": {"texture": "#0"},
+				"east": {"texture": "#0"},
+				"south": {"texture": "#0"},
+				"west": {"texture": "#0"},
+				"up": {"texture": "#0"},
+				"down": {"texture": "#0"}
+			}
+		},
+		{
+			"name": "Leg",
+			"from": [0, 0, 14],
+			"to": [2, 14, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 18, 8.25]},
+			"color": 3,
+			"faces": {
+				"north": {"texture": "#0"},
+				"east": {"texture": "#0"},
+				"south": {"texture": "#0"},
+				"west": {"texture": "#0"},
+				"up": {"texture": "#0"},
+				"down": {"texture": "#0"}
+			}
+		},
+		{
+			"name": "Leg",
+			"from": [14, 0, 0],
+			"to": [16, 14, 2],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 18, 8.25]},
+			"color": 3,
+			"faces": {
+				"north": {"texture": "#0"},
+				"east": {"texture": "#0"},
+				"south": {"texture": "#0"},
+				"west": {"texture": "#0"},
+				"up": {"texture": "#0"},
+				"down": {"texture": "#0"}
+			}
+		},
+		{
+			"name": "Leg",
+			"from": [0, 0, 0],
+			"to": [2, 14, 2],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 18, 8.25]},
+			"color": 3,
+			"faces": {
+				"north": {"texture": "#0"},
+				"east": {"texture": "#0"},
+				"south": {"texture": "#0"},
+				"west": {"texture": "#0"},
+				"up": {"texture": "#0"},
+				"down": {"texture": "#0"}
+			}
+		},
+		{
+			"name": "UnderShelf",
+			"from": [2, 4, 0],
+			"to": [14, 5, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 18, 8.25]},
+			"color": 3,
+			"faces": {
+				"north": {"texture": "#1"},
+				"east": {"texture": "#1"},
+				"south": {"texture": "#1"},
+				"west": {"texture": "#1"},
+				"up": {"texture": "#1"},
+				"down": {"texture": "#1"}
+			}
+		},
+		{
+			"name": "UnderShelf",
+			"from": [0, 4, 2],
+			"to": [2, 5, 14],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 18, 8.25]},
+			"color": 3,
+			"faces": {
+				"north": {"texture": "#1"},
+				"east": {"texture": "#1"},
+				"south": {"texture": "#1"},
+				"west": {"texture": "#1"},
+				"up": {"texture": "#1"},
+				"down": {"texture": "#1"}
+			}
+		},
+		{
+			"name": "UnderShelf",
+			"from": [14, 4, 2],
+			"to": [16, 5, 14],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 18, 8.25]},
+			"color": 3,
+			"faces": {
+				"north": {"texture": "#1"},
+				"east": {"texture": "#1"},
+				"south": {"texture": "#1"},
+				"west": {"texture": "#1"},
+				"up": {"texture": "#1"},
+				"down": {"texture": "#1"}
+			}
+		},
+		{
+			"name": "Table Bench",
+			"from": [0, 14, 0],
+			"to": [16, 16, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 18, 8.25]},
+			"color": 3,
+			"faces": {
+				"north": {"texture": "#1"},
+				"east": {"texture": "#1"},
+				"south": {"texture": "#1"},
+				"west": {"texture": "#1"},
+				"up": {"texture": "#1"},
+				"down": {"texture": "#1"}
+			}
+		}
+	]
+}

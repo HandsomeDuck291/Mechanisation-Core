@@ -11,8 +11,8 @@
   "item.mechacore.palladium_ingot": "Palladium Ingot",
   "item.mechacore.raw_palladium": "Raw Palladium",
 
-  "block.mechacore.equip_pad": "Equip Pad",
-  "block.mechacore.suit_constructor": "Suit Constructor",
+  "block.mechacore.suit_constructor": "Exo-Suit Table",
+  "block.mechacore.module_table": "Module Bench",
 
   "block.mechacore.palladium_ore": "Palladium Ore",
   "block.mechacore.deepslate_palladium_ore": "Deepslate Palladium Ore",

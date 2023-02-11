@@ -1,5 +1,6 @@
 package handsomeduck.mechacore.api.packets;
 
+import handsomeduck.mechacore.common.block.ModuleTableEntity;
 import handsomeduck.mechacore.common.block.SuitConstructorEntity;
 import net.fabricmc.fabric.api.networking.v1.PacketSender;
 import net.minecraft.client.MinecraftClient;
@@ -20,6 +21,10 @@ public class ItemStackSyncS2CPacket {
         BlockPos position = buf.readBlockPos();
 
         if(client.world.getBlockEntity(position) instanceof SuitConstructorEntity blockEntity) {
+            blockEntity.setInventory(list);
+        }
+
+        if(client.world.getBlockEntity(position) instanceof ModuleTableEntity blockEntity) {
             blockEntity.setInventory(list);
         }
     }

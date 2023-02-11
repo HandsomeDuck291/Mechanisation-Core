@@ -1,8 +1,6 @@
 {
   "replace": false,
   "values": [
-    "mechacore:equip_pad",
-    "mechacore:suit_constructor",
     "mechacore:palladium_ore",
     "mechacore:deepslate_palladium_ore",
     "mechacore:raw_palladium_block",

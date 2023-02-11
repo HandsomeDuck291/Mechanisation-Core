@@ -1,8 +1,6 @@
 {
   "replace": false,
   "values": [
-    "starktech:equip_pad",
-    "starktech:suit_constructor",
     "starktech:palladium_ore",
     "starktech:deepslate_palladium_ore",
     "starktech:raw_palladium_block",
